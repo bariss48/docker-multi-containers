@@ -7,15 +7,15 @@ script:
     - docker run -e CI=true baris48/multi-containers npm test
 
 after_success:
-    - docker build -t baris48/multi-client ./client
-    - docker build -t baris48/multi-nginx ./nginx
-    - docker build -t baris48/multi-server ./server
-    - docker build -t baris48/multi-worker ./worker
+    - docker build -t baris48/multi-containers-client ./client
+    - docker build -t baris48/multi-containers-nginx ./nginx
+    - docker build -t baris48/multi-containers-server ./server
+    - docker build -t baris48/multi-containers-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    - docker push baris48/multi-client ./client
-    - docker push baris48/multi-nginx ./nginx
-    - docker push baris48/multi-server ./server
-    - docker push baris48/multi-worker ./worker
+    - docker push baris48/multi-containers-client ./client
+    - docker push baris48/multi-containers-nginx ./nginx
+    - docker push baris48/multi-containers-server ./server
+    - docker push baris48/multi-containers-worker ./worker
 
     
 
