@@ -1,0 +1,24 @@
+sudo: required
+services:
+    -docker
+before_install:
+    -docker build -t baris48/multi-containers -f ./client/Dockerfile.dev .
+script:
+    - docker run -e CI=true baris48/multi-containers npm test
+
+after_success:
+    - docker build -t baris48/multi-client ./client
+    - docker build -t baris48/multi-nginx ./nginx
+    - docker build -t baris48/multi-server ./server
+    - docker build -t baris48/multi-worker ./worker
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - docker push baris48/multi-client ./client
+    - docker push baris48/multi-nginx ./nginx
+    - docker push baris48/multi-server ./server
+    - docker push baris48/multi-worker ./worker
+
+    
+
+
+
+
