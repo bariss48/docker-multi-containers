@@ -11,7 +11,7 @@ after_success:
     - docker build -t baris48/multi-containers-nginx ./nginx
     - docker build -t baris48/multi-containers-server ./server
     - docker build -t baris48/multi-containers-worker ./worker
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    - echo \"$DOCKER_PASSWORD\" docker login -u \"$DOCKER_ID\" --password-stdin
     - docker push baris48/multi-containers-client ./client
     - docker push baris48/multi-containers-nginx ./nginx
     - docker push baris48/multi-containers-server ./server
