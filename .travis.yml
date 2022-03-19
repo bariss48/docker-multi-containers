@@ -17,7 +17,21 @@ after_success:
     - docker push baris48/multi-containers-server 
     - docker push baris48/multi-containers-worker 
 
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: docker-multi-containers
+  env: Dockermulticontainers-env
+  bucket_name: elasticbeanstalk-us-east-1-771619524940
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  
+
 language: generic
+
+
     
 
 
