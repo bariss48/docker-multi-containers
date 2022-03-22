@@ -1,4 +1,4 @@
-name: Deploy master
+name: Deploy MultiDocker
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: bariss48/docker-multi-containers
+      - uses: actions/checkout@v2
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - run: docker build -t baris48/multi-containers -f ./client/Dockerfile.dev ./client
       - run: docker run -e CI=true baris48/multi-containers npm test
@@ -26,7 +26,7 @@ jobs:
         run: zip -r deploy.zip . -x '*.git*'
  
       - name: Deploy to EB
-        uses: bariss48/docker-multi-containers
+        uses: einaregilsson/beanstalk-deploy@v18
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
