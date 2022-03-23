@@ -10,6 +10,7 @@ https://hub.docker.com/repository/docker/baris48/multi-containers-worker
 https://hub.docker.com/repository/docker/baris48/multi-containers-nginx
 https://hub.docker.com/repository/docker/baris48/multi-containers-client
 ```
+<img width="967" alt="Ekran Resmi 2022-03-23 13 19 47" src="https://user-images.githubusercontent.com/50153950/159677047-fb5fd063-f5ec-40dd-8818-cbcb0abc7a22.png">
 
 ### you need create VPC on AWS , for communication with others services. ( like AWS elastic cache , AWS relational database service )
 
@@ -24,3 +25,20 @@ https://hub.docker.com/repository/docker/baris48/multi-containers-client
 ```
 $ touch deploy.yml   (/.github/workflow/deploy.yml)
 ```
+### Architecture ( production )
+<img width="816" alt="architecture" src="https://user-images.githubusercontent.com/50153950/159677182-8dc8dd87-fccb-4bf3-ba78-51927b7a938c.png">
+
+### Architecture ( development )
+<img width="800" alt="development" src="https://user-images.githubusercontent.com/50153950/159677298-7bbd85db-6498-48f3-aa46-cda2e65113ff.png">
+
+### Architecture ( VPC )
+<img width="667" alt="VPC" src="https://user-images.githubusercontent.com/50153950/159677663-07fa3633-f2a4-48c4-8f57-81f386457089.png">
+
+#### After all this your beanstalk app status must be 'OK' 
+<img width="899" alt="Ekran Resmi 2022-03-23 13 23 17" src="https://user-images.githubusercontent.com/50153950/159678133-fe8ff58a-8f0d-459c-a0d4-9b16e060304c.png">
+
+### Finally you can see your deployment success: ( check URL )
+<img width="1552" alt="Ekran Resmi 2022-03-23 13 24 41" src="https://user-images.githubusercontent.com/50153950/159678376-dcc0cbd0-a870-49a4-a570-4e7a4d1e1f8f.png">
+
+## Reference
+### Docker and Kubernetes: The Complete Guide ( Stephen Grider Course )
