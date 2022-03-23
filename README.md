@@ -9,7 +9,6 @@ https://hub.docker.com/repository/docker/baris48/multi-containers-server
 https://hub.docker.com/repository/docker/baris48/multi-containers-worker
 https://hub.docker.com/repository/docker/baris48/multi-containers-nginx
 https://hub.docker.com/repository/docker/baris48/multi-containers-client
-
 ```
 
 ### you need create VPC on AWS , for communication with others services. ( like AWS elastic cache , AWS relational database service )
